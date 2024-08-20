@@ -82,7 +82,7 @@ gulp.task('sass-common', gulp.series(
 //cleanCSS removed container query so production is skipped. Using dev instead.
 gulp.task('sass-minify-prod', gulp.series(
   function sassMinifyProd() {
-    return gulp.src('build/common/css/dflip.css')
+    return gulp.src('assets/css/dflip.css')
       .pipe(cleanCSS({
         keepSpecialComments: '*',
         spaceAfterClosingBrace: true
