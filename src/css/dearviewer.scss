@@ -1,0 +1,38 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import "scss/_mixings.scss";
+@import "scss/variables.scss";
+@import "scss/font.scss";
+@import "scss/legacy.scss";
+/*! DEARVIEWER*/
+@import "scss/main.scss";
+
+.df-posts [skip-parse] {
+  display: none;
+}
+
+.df-posts {
+  text-align: center;
+  position: relative;
+}
+
+.df-load-more-button-wrapper {
+  text-align: center;
+  display: none;
+  margin-top: 20px;
+}
+
+.df-posts [skip-parse] ~ .df-load-more-button-wrapper {
+  display: block;
+}
+
+.df-load-more-button {
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto;
+  cursor: pointer;
+  background: #0085ba;
+  color: white;
+}
+._df_book{
+  min-height: 400px;
+}

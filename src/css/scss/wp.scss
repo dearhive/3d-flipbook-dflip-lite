@@ -1,0 +1,20 @@
+body.admin-bar .df-lightbox-wrapper, body.admin-bar .df-lightbox-bg {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .df-lightbox-wrapper, body.admin-bar .df-lightbox-bg {
+    top: 46px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body.admin-bar .df-lightbox-wrapper, body.admin-bar .df-lightbox-bg {
+    top: 0px;
+  }
+}
+
+.df-single-content {
+  //fix for some theme that use flex on elements above the singe content
+  width: 100%;
+}

@@ -1,0 +1,63 @@
+.df-container {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+  }
+
+  :hover ::-webkit-scrollbar {
+  }
+
+
+  ::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  ::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb:hover,
+  ::-webkit-scrollbar-thumb:active {
+    border-right: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: transparent;
+    //background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  ::-webkit-scrollbar-track:active {
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+.df-sidemenu-wrapper {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}

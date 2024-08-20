@@ -1,0 +1,92 @@
+.df-zoomview {
+  @extend %df-flipbooks;
+  //@include filter(blur, 0);
+  display: none;
+  cursor: move;
+  //transition: 0.2s transform;
+
+  .df-viewer-wrapper {
+    position: relative;
+    margin: 0 auto;
+
+    .df-book-shadow {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      display: none;
+      @include box-shadow(0px 1px 15px 1px rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  .df-page {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    background-color: #fff;
+
+    &:before {
+      width: 10%;
+      opacity: 0.5;
+    }
+
+    &.df-page-front {
+      left: 50%;
+    }
+  }
+}
+
+.df-zoom-active {
+
+  .df-viewer {
+    cursor: move;
+    //noinspection CssInvalidPropertyValue
+    cursor: -webkit-grab;
+  }
+
+  .df-flipbook {
+    display: none;
+  }
+
+  .df-zoomview {
+    display: block;
+  }
+
+}
+
+.df-hybrid-viewer {
+  .df-zoomview .df-page:before {
+    display: none;
+  }
+
+  &:not(.df-zoom-active) {
+    .df-flipbook.df-loading + .df-zoomview {
+      display: none;
+    }
+
+    .df-zoomview {
+      display: block;
+      //mix-blend-mode: multiply;
+      //Mix blend mode causes overlap issues. https://github.com/deepak-ghimire/dearviewer/issues/142
+      pointer-events: none;
+
+      .df-page {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    .df-loading {
+      + .df-zoomview::after {
+        @include df-loading-psuedo();
+        @extend %df-loading-gif;
+      }
+    }
+
+    &.df-pending, &.df-pendingresize, &.df-hide-zoomview {
+      .df-zoomview {
+        display: none;
+      }
+    }
+  }
+}
