@@ -1,5 +1,5 @@
 {
-  "name": "dearviewer",
+  "name": "3d-flipbook-dflip-lite",
   "version": "2.3.30",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
@@ -26,9 +26,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-stream": "^7.0.0"
   },
-  "description": "DearViewer",
+  "description": "3d-flipbook-dflip-lite",
   "main": "electron/main.js",
-  "repository": "https://github.com/deepak-ghimire/dearviewer.git",
+  "repository": "https://github.com/dearhive/3d-flipbook-dflip-lite.git",
   "author": "Deepak Ghimire <deip.ghimire@gmail.com>",
   "license": "license.txt",
   "private": true
