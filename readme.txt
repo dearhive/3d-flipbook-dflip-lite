@@ -6,7 +6,7 @@ Contributors: deip, dearhive
 Tags: flipbook, flip book, 3d flipbook, pdf flipbook, pdf viewer
 Requires at least: 4.6
 Tested up to: 6.6
-Stable tag: 2.3.30
+Stable tag: 2.3.32
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -268,6 +268,9 @@ This will create your PDF flipbook or image flipbook to open at page 5 when it s
 
 We recommend to use lightbox for PDF viewer instead of PDF embed viewer. Using embed can result in extra bandwidth for the PDF documents even if the user maynot view the document.
 
+= How can I become a Contributor? =
+
+If you want to contribute, go to our [DFlip Lite WordPress Repository](https://github.com/dearhive/3d-flipbook-dflip-lite) and see where you can help.
 
 == Screenshots ==
 
@@ -281,6 +284,12 @@ We recommend to use lightbox for PDF viewer instead of PDF embed viewer. Using e
 == Changelog ==
 
 This lite version is available in WordPress plugin directory since version 1.2.8
+
+= 2.3.32: =
+* Add: Category filter added in posts page
+* Fix: PDF.js Vulnerability (CVE-2024-4367) fix
+* Improve: PDF.js compatibility
+* Improve: CSS container queries supported and minified
 
 = 2.2.56: =
 * Fix: PDF.js Vulnerability (CVE-2024-4367) fix

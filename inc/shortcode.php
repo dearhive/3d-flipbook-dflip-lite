@@ -39,7 +39,7 @@ class DFlip_ShortCode {
     // Load shortcode hooks and filters.
     add_shortcode( 'dflip', array( $this, 'shortcode' ) );
     //dearpdf shortcodes are loaded in init, so we need a later hook than init, widgets_init runs after init
-    add_action( 'widgets_init', array( $this, 'dearpdf_override' ), 0 );
+//    add_action( 'widgets_init', array( $this, 'dearpdf_override' ), 0 );
 
   }
 

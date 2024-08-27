@@ -437,7 +437,7 @@ function _instanceof(left, right) {
 ;// CONCATENATED MODULE: ./src/js/dearviewer/defaults.js
 /* globals jQuery */ var defaults_DEARVIEWER = {
     jQuery: jQuery,
-    version: '2.3.30',
+    version: '2.3.32',
     autoDetectLocation: true,
     slug: undefined,
     locationVar: "dearViewerLocation",
