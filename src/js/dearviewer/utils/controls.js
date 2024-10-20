@@ -339,7 +339,15 @@ class UI {
       app = this.app;
     //bail out if the keys are getting entered in some input box.
     if (event.target.nodeName === "INPUT") return;
-    let navKeysValid = (app.isFullscreen === true || app.options.isLightBox === true) || app.options.arrowKeysAction === DEARVIEWER.ARROW_KEYS_ACTIONS.NAV;
+    let navKeysValid = false;
+    if(app.options.arrowKeysAction === DEARVIEWER.ARROW_KEYS_ACTIONS.NAV){
+      if(app.isFullscreen === true || app.options.isLightBox === true){
+        navKeysValid = true;
+      }
+      if(app.options.isLightBox != true && DEARVIEWER.activeEmbeds.length <2 && jQuery("body").hasClass("df-lightbox-open") === false){
+        navKeysValid = true;
+      }
+    }
     switch (event.keyCode) {
       case 27://escKey
         if (DEARVIEWER.activeLightBox && DEARVIEWER.activeLightBox.app && !utils.isChromeExtension()) {
@@ -1063,7 +1071,7 @@ DEARVIEWER.checkBrowserURLforPDF = function (openFlipbook = false) {
   if (utils.isIEUnsupported) return;
   let pdf = (new URL(location.href)).searchParams.get('pdf-source');
   if (pdf) {
-    pdf = unescape(pdf);
+    pdf = decodeURI(pdf);
     if (openFlipbook) {
       DEARVIEWER.openURL(pdf);
     }

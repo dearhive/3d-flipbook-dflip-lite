@@ -1084,9 +1084,9 @@ class FlipBook3D extends BaseFlipBookViewer {
     let cameraZ = 1 / (2 * Math.tan(Math.PI * stage.camera.fov * 0.5 / 180) / (dimensions.stage.height / app.zoomValue)) + 2.2;
 
     this.updateShadowSize();
-    this.stage.spotLight.position.x = -this.pageScaleX * 440;
-    this.stage.spotLight.position.y = this.pageScaleX * 440;
-    this.stage.spotLight.position.z = this.pageScaleX * 660;
+    this.stage.spotLight.position.x = -this.pageScaleX * 330;
+    this.stage.spotLight.position.y = this.pageScaleX * 330;
+    this.stage.spotLight.position.z = this.pageScaleX * 550;
     this.stage.spotLight.shadow.camera.far = this.pageScaleX * 1200;
     this.stage.spotLight.shadow.camera.updateProjectionMatrix();
 

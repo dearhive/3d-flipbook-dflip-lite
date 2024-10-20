@@ -173,6 +173,9 @@ class App {
           options.pdfjsSrc = window[DEARVIEWER.locationVar] + "js/libs/pdfjs/" + pdfDir + "/pdf.min.js";
           options.pdfjsWorkerSrc = window[DEARVIEWER.locationVar] + "js/libs/pdfjs/" + pdfDir + "/pdf.worker.min.js";
         }
+        if(pdfDir === "stable"){
+          this.options.fakeZoom = 1;
+        }
       }
     }
     else {

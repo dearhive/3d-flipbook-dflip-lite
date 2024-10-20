@@ -708,7 +708,7 @@ class PDFDocumentProvider extends DocumentProvider {
 
           let fileName = app.options?.fileName || _a.href;
           //Display error reason
-          app.updateInfo(cors + "<strong>Error: Cannot access file!  </strong>" + unescape(fileName) + "<br><br>" + error.message, "df-error");
+          app.updateInfo(cors + "<strong>Error: Cannot access file!  </strong>" + fileName + "<br><br>" + error.message, "df-error");
           console.log(error);
           app.container.removeClass('df-loading').addClass("df-error");
           provider.dispose();

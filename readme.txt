@@ -1,105 +1,115 @@
-=== PDF Flipbook, 3D Flipbook, PDF embed, PDF viewer - DearFlip ===
-Plugin Name: PDF Flipbook, 3D Flipbook, PDF embed, PDF viewer - DearFlip
+=== Dear Flipbook - PDF Flipbook, 3D Flipbook, PDF embed, PDF viewer ===
+Plugin Name: Dear Flipbook - PDF Flipbook, 3D Flipbook, PDF embed, PDF viewer
 Author: dearhive
 Author URI: https://dearflip.com/go/wp-lite-author
 Contributors: deip, dearhive
 Tags: flipbook, flip book, 3d flipbook, pdf flipbook, pdf viewer
 Requires at least: 4.6
 Tested up to: 6.6
-Stable tag: 2.3.32
+Stable tag: 2.3.42
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-PDF Flipbook, 3D Flipbook for WordPress. Create realistic 3D flipbooks using PDFs or Images. Easy to use PDF embed and pdf viewer flipbook.
+Dear Flipbook creates PDF Flipbook, 3D Flipbook, PDF viewer, PDF embed for WordPress sites. Create impressive and realistic 3D flipbooks with PDFs.
 
 == Description ==
 
-*When impression matters, don’t settle with Flat PDFs! DearFlip is an easy to use 3D flipbook WordPress plugin for every website and PDF. It's the simplest way to create a flipbook in WordPress - 3D flipbook, 2D flipbook, image flipbook, pdf flipbook, portfolio flipbook. All you need to add is the PDF link and your PDF will come alive as a realistic 3D Flipbook. BRING LIFE TO YOUR PDFs!*
+Introducing Dear Flipbook (DearFlip), the user-friendly 3D flipbook WordPress plugin. Simply provide the PDF link, and Dear Flipbook will transform your PDF into an immersive 3D flipbook. It's the simplest solution for creating captivating flipbooks in WordPress. Choose from various flipbook styles, including 3D flipbook, 2D flipbook, image flipbook, PDF flipbook, and portfolio flipbooks.
 
-DearFlip is a stunning 3D flipbook alternative for your flat lifeless PDF viewer. DearFlip's easy post structure makes it easy to create a flipbook inside WordPress. Create a 3D flipbook, make your PDFs interactive and generate more customer attention.
+**Engage with Dynamic 3D Flipbooks!** Transform your flat PDFs into captivating and immersive 3D Flipbooks. With Dear Flipbook, you can effortlessly create a visually stunning and realistic 3D Flipbook presentation that will grab your audience's attention. Say goodbye to static documents and bring your PDFs to life!
 
->Important Notice: DearFlip (also known as dFlip) is now sold on [dearflip.com](https://dearflip.com/go/wp-lite-full-version) instead of CodeCanyon.net
 
 [youtube https://youtu.be/-yuABFt_-0I?si=H9wLA1vJ3j9GMvEx]
+
+### QuickLinks
 
 [WordPress Flipbook Live Demo](https://dearflip.com/go/wp-lite-demo)
 [Online Documentation](https://dearflip.com/go/wp-lite-docs)
 [WordPress Flipbook Pro Version](https://dearflip.com/go/wp-lite-full-version)
 
-### DearFlip 3D Flipbook and it's variations ###
-- **3D Flipbook**- Best look your PDFs and images can get. DearFlip converts your flat images and PDFs to interactive and real life books with the help of cutting edge WebGL technology. All high-tech complex work happens behind the scenes, while your customers enjoy your PDF content with delight. 3D Flipbook is our pride and soon will be yours.
-- **2D Flipbook** - Old is gold! 2D flipbook uses CSS and HTMl5 tags to create a flippable and interactive flipbook. The famous variant before the 3D flipbook is still a worthy alternative. Use 2D flipbook for faster loading and in cases where 3D is not preferred, like low-end devices.
-- **PDF Flipbook** - What makes the easy-to-use PDFs better? It's a 3D PDF Flipbook! PDF flipbooks are very easy to create and use. They are rendered using PDF.js library and are very convenient to use and manage. Updating a PDF flipbook or creating it is just about the link to the PDF file, no further hassle. It's our official recommended file format for a 3D flipbook.
-- **Image Flipbook** - Got images that you want to display? Why not create a story book out of your images and share your experience with ALBUMS. Image Flipbook are your virtual Albums, flip, share and enjoy your photos, portfolios with the world.
-- **PDF embed and PDF Viewer** - If you are still interested in old PDF viewers, Dearflip has that too. Create PDF embeds on your page that resemble browsers embed pdf viewer. These are best suited for irregular documents.
+### Viewer Modes available in Dear Flipbook
+- **3D Flipbook**- With Dear Flipbook, your PDFs and images will be transformed into interactive, lifelike books. This is achieved through cutting-edge WebGL technology, which does all the complex work behind the scenes. Meanwhile, your customers will be enjoying your PDF content with delight. Our 3D Flipbook is a source of pride for us, and we believe it will soon be for you as well.
+- **2D Flipbook** - "Old but Gold: 2D Flipbook" Experience the classic charm of traditional flipbooks with our 2D flipbook, crafted using CSS and HTML5 tags. This interactive and flippable digital flipbook remains a valuable alternative to its 3D counterpart.When speed is crucial and 3D effects are not a priority, such as on low-end devices, the 2D flipbook offers a faster loading time and a smooth browsing experience. Embrace nostalgia and enjoy the timeless appeal of 2D flipbooks, where the simplicity of design meets the beauty of interactivity.
+- **PDF embed and PDF Viewer** - For those who prefer classic PDF viewers, Dear Flipbook offers a feature that allows you to create PDF embeds on your page that mimic the look and feel of a browser's embedded PDF viewer. This option is particularly suitable for documents with irregular layouts or formatting.
+- **PDF Slider like SlideShare** - Why leave the basic slider, when complex flipbook are already available. Flipbook offers a simple and intuitive slider mode that allows users to view PDF pages as slides. This feature is especially useful for documents with unconventional layouts or formatting, making it easier to navigate and present the content effectively.
+
+
+
+### File Formats Supported by Dear Flipbook
+- **PDF / PDF Flipbook** – Why do we recommend using 3D PDF Flipbooks? The key lies in their incredible simplicity. These PDF flipbooks are incredibly easy to create and use. Built on the powerful PDF.js library, they offer exceptional convenience, making management and updates a breeze. All it takes is a simple link to the PDF file, eliminating any unnecessary hassle. As our recommended file format for 3D flipbooks, we guarantee an unparalleled user experience.
+- **Image / Image Flipbook** – If you have a collection of images that you want to display, why not create a captivating storybook out of them using ALBUMS? Picture Flipbook serves as your virtual album, enabling you to flip through, share, and cherish your photographs and portfolios with the world.
 
 
 ### Customer Engagement and Presentation ###
-**Presentation Matters!** The main idea of an online flipbook is customer engagement. Traditional document layout doesn't cut it! Scrolling a PDF to read the content is not the best method when the content is more about presentation. If you are selling an idea, product, work, portfolio - it's best suited when you present it rather than list it. There is a reason why websites are not text based, they are colorful, interactive - CUSTOMER ENGAGEMENT.
+**Presentation Matters!**  At the core of an online flipbook lies the fundamental principle of customer engagement. Traditional document layouts fall short when it comes to captivating audiences. Scrolling through a PDF to consume content is not ideal, especially when the focus is more on presentation rather than mere information. Whether you're promoting an idea, product, artwork, or portfolio, showcasing it visually is far more impactful than simply listing it. It's no coincidence that websites are not solely text-based; their vibrant colors and interactive elements are designed specifically to foster CUSTOMER ENGAGEMENT.
+
+### How easy is Dear Flipbook? Just 5 Steps! ###
+Known for its user-friendly interface, WordPress serves as an inspiration for Dear Flipbook's post structure when creating and managing 3D flipbooks. The process is designed to be as straightforward and effortless as creating a regular post, making it accessible to users of all skill levels.
 
 
-### Just 5 Steps! ###
-WordPress is famous for its easy to learn and use structure. DearFlip follows WordPress post structure for creating and managing 3D flipbooks. It’s easy and simple just like creating a post.
+1. Install the DearFlip 3D flipbook plugin.
+2. Create a new FlipBook post.
+3. Provide a link to your PDF file and save the post.
+4. Copy the generated shortcode and paste the shortcode into the desired page or post.
+5. Publish the page or post, and your interactive 3D Flipbook will be ready to flip and engage your audience!
 
 
-1. Install DearFlip - 3D flipbook plugin
-2. Create a FlipBook Post
-3. Provide a link to your PDF and save the post
-4. Copy the shortcode and paste to your page
-5. Publish and 3D Flipbook is ready to flip on your page!
-
-
-### Features ###
-- Realistic 3D flipbook powered by modern WebGL technology
-- Reliable 2D flipbook that works on low-end devices too, and are used as fallback
-- Easy WordPress Post structure to create flipbook and shortcode to display flipbook
-- PDF and Image Support
-- Embedded inline flipbook:  is the default structure to display flipbook
-- Basic Popup: Display flipbook on demand, best for [multiple flipbook in a single page](https://dearflip.com/go/wp-lite-flipbook-examples)
-- Table of contents for PDF
-- PDF viewer and PDF embed support
-- Custom table of contents creator
-- Page thumbnails preview
-- Deep linking to pages of a flipbook via share button
-- Categories to organize flipbook
-- Multiple flipbook shortcode to display multiple books
-- RTL mode to Arabian and RTL mode languages
-- PDF download enable and disable
-- Supports any number of pages, more than 1000 pages and 500MB.
-- Partial loading (on-demand pages) make using 500MB files load and start with just 5MB of data
+### Dear Flipbook Feature List ###
+* **Realistic 3D flipbook** powered by modern WebGL technology, providing an immersive reading experience.
+* **Reliable 2D flipbook** compatible with low-end devices, serving as a dependable fallback option.
+* User-friendly WordPress post structure simplifies flipbook creation, while the shortcode enables seamless display.
+* Supports both **PDF and image formats**, ensuring versatility and flexibility.
+* Embedded inline flipbook as the default structure for displaying flipbooks.
+* Basic Popup feature allows on-demand flipbook display, ideal for scenarios with multiple flipbooks on a single page.
+* Table of contents for PDF documents, facilitating easy navigation and organization.
+* **PDF viewer and PDF embed** support for seamless integration and compatibility with PDF files.
+* **Slider Mode** display PDF pages as slides, just like in Slideshare.
+* Custom table of contents creator empowers users to design and personalize their content.
+* Page thumbnails preview provides a visual representation of each page, enhancing the user experience.
+* **Deep linking** to specific pages of a flipbook via share button, enabling easy sharing and referencing.
+* Categories feature enables organized management and categorization of flipbooks.
+* Multiple flipbook shortcode enables the display of multiple flipbooks on a single page.
+* **RTL mode** caters to Arabian and other right-to-left languages, ensuring seamless integration and usability.
+* PDF download enable and disable option provides control over the download functionality of flipbooks.
+* Supports an extensive number of pages, exceeding 1000 pages and 500MB in size.
+* Partial loading (on-demand pages) optimizes the loading process, allowing large files to load and start with just a small amount of data.
 
 
 ### PRO FEATURES ###
-- PDF links - you can test your PDF links without premium version using our online [PDF Flipbook Viewer](https://dearflip.com/go/wp-lite-pdf-viewer)
-- More Popup - Open flipbook using buttons, links and custom HTML or images too. [Examples](https://dearflip.com/go/wp-lite-flipbook-examples)
-- Global Settings - Control settings for all flipbook at once
-- Controls Customization
-- Paper Flexibility
-- Text Translation
-- Google Analytics
-- Stage Padding
-- Zoom on mouse scroll options
-- Zoom Ratio
-- Share Prefix to custom slug, default slug is *dearflip-*
-- PDF links target setting
-- PDF media attachment page flipbook
-- PDF partial loading size
-- Responsive book thumbs
-- Customization tips and help
-- [Read more in detail](https://dearflip.com/go/wp-lite-vs-premium)
+* PDF links – links inside you PDFs are clickable (Test your PDF links without a premium version using our online [PDF Flipbook Viewer](https://dearflip.com/go/wp-lite-pdf-viewer) to get the idea)
+* More Popup – Open flipbooks using buttons, links, custom HTML or images. Examples
+* Book shelves - Showcase your flipbooks in beautiful bookshelves
+* Global Settings – Control settings for all flipbooks at once with Global Setting
+* Realistic Book covers - Choose realistic 3D book covers instead of plan pages for cover.
+* Spiral 3D Flipbook - Go a level more in realistic 3D Flipbook with spiral flipbook
+* Controls Customization - choosed what controls to hide/display in your flipbook
+* Paper Flexibility - Assess the flexibility and range of motion of the 3D flipbook pages.
+* Text Translation - Translate the text in your flipbook controls and buttons
+* Google Analytics - Track your users action of flipbooks opening
+* Stage Padding - Increase or decrease triage padding between your 3D flipbook and the container element
+* Zoom on mouse scroll options - Turn on or off mouse scroll action for zoom
+* Zoom Ratio - Choose the perfect amount of zoom your flipbook should make.
+* Share Prefix - Change the sharelink prefix to custom slug, default slug is dearflip-
+* PDF links target setting
+* PDF media attachment page flipbook
+* PDF partial loading size - Optimize loading speed with PDF partial loading size.
+* Responsive book thumbs
+* Customization tips and help
+* [Read more in detail](https://dearflip.com/go/wp-lite-vs-premium)
 
 
 
 
-### Diversified User Base ###
-DearFlip is available on various platforms. It's serving more than 25,000 users on various niches:
-- 10,000+ users on WordPress plugin repository [4.5/5 based on 16 ratings](https://wordpress.org/support/plugin/3d-flipbook-dflip-lite/reviews/)
-- 4,500+ premium customers on CodeCanyon - [Best Rated Premium WordPress Flipbook: 4.9/5 based on 107 ratings](https://dearflip.com/go/dflip-wp-codecanyon)
-- 12,000+ users on Chrome App. [4.8/5 based on 45 ratings](https://dearflip.com/go/chrome-app)
+### Dear Flipbook is also available beyond WordPress! ###
+Dear Flipbook, accessible across multiple platforms, proudly serves a diverse user base exceeding 200,000 individuals. These users span various niches, each with unique interests and needs.
+- 100,000+ users on WordPress plugin repository [4.8/5 based on 112 ratings](https://wordpress.org/support/plugin/3d-flipbook-dflip-lite/reviews/)
+- 7,500+ premium customers on CodeCanyon - [Best Rated Premium WordPress Flipbook: 4.9/5 based on 107 ratings](https://dearflip.com/go/dflip-wp-codecanyon)
+- 15,000+ users on Chrome App and Chrome Extension. [4.8/5 based on 45 ratings](https://dearflip.com/go/chrome-app)
+- 10,000+ jQuery and Javascript plugin users.
 
 
-### What do users say about DearFlip? ###
+### What do users say about Dear Flipbook? ###
 ★★★★★
 >Great plugin – client is very happy with the look. Also, fantastic response time from the developers, and they are very helpful with fixing our specific display issues. [alsalin](https://wordpress.org/support/topic/awesome-7957/)
 
@@ -121,7 +131,7 @@ Support is top-class and 5***** [spicop](https://codecanyon.net/user/spicop)
 
 
 ### 3D Flipbook for Chrome Browser ###
-> **FREE PDF Flipbook Reader for your Browser!** Get DearFlip on your Google Chrome. You can further view your local and online PDF to full extent without installing a plugin to any site. Just open the PDF with Chrome and you have your 3D Flipbook ready. [Free Chrome Extension](https://dearflip.com/go/chrome-app)
+> **FREE PDF Flipbook Reader for your Browser!** Get Dear Flipbook on your Google Chrome. You can further view your local and online PDF to full extent without installing a plugin to any site. Just open the PDF with Chrome and you have your 3D Flipbook ready. [Free Chrome Extension](https://dearflip.com/go/chrome-app)
 
 
 
@@ -129,13 +139,13 @@ Support is top-class and 5***** [spicop](https://codecanyon.net/user/spicop)
 == Installation ==
 
 
-Thanks for using DearFlip 3D Flipbook plugin – lite edition, on your WordPress site. This page is intended for lite users that are using the lite edition and checking the features of DearFlip WordPress flipbook plugin. Please go through the FAQs that occur during using the lite version.
+Thanks for using Dear Flipbook 3D Flipbook plugin – lite edition, on your WordPress site. This page is intended for lite users that are using the lite edition and checking the features of Dear Flipbook WordPress flipbook plugin. Please go through the FAQs that occur during using the lite version.
 
 
 If these installation FAQs don't solve your query and issues, please contact using the official WordPress support page.
 
 
-= How to install the DearFlip flipbook WordPress plugin? =
+= How to install the Dear Flipbook flipbook WordPress plugin? =
 
 
 1. Goto **'Plugins > Add New'** inside WordPress admin
@@ -144,7 +154,7 @@ If these installation FAQs don't solve your query and issues, please contact usi
 4. Click on **'Activate'** to activate the plugin
 
 
-> Note: When upgrading to the PRO version of DearFlip 3D flipbook WordPress plugin, make sure you deactivate the lite version. Your flip book created with the lite version will stay in the database and work seamlessly. If you are using a cache plugin, we recommend clearing cache if any issues arise.
+> Note: When upgrading to the PRO version of Dear Flipbook 3D flipbook WordPress plugin, make sure you deactivate the lite version. Your flip book created with the lite version will stay in the database and work seamlessly. If you are using a cache plugin, we recommend clearing cache if any issues arise.
 
 
 = Loading Case 1: No Loading Icon + Long Message: =
@@ -152,9 +162,9 @@ dFlip 3D Flipbook WordPress Usage & FAQs 1
 If you see the loading message and don’t see a loading icon. Then the issue is related to code execution.
 
 
-1. Cause A – Other plugin error: DearFlip uses jQuery to start the plugin and if other jQuery plugins cause any errors, the execution of DearFlip is also disturbed. The flipbook never advances further and is stuck at the initial loading message. Check your Browser console (CTRL + SHIFT + I) and make sure there are no errors.
+1. Cause A – Other plugin error: Dear Flipbook uses jQuery to start the plugin and if other jQuery plugins cause any errors, the execution of Dear Flipbook is also disturbed. The flipbook never advances further and is stuck at the initial loading message. Check your Browser console (CTRL + SHIFT + I) and make sure there are no errors.
 2. Cause B – WordPress 5.5 update: This is similar to cause A. With WordPress 5.5, jQuery got updated and many other plugins failed, and that results in cause A. So check your Browser console (CTRL + SHIFT + I) and make sure there are no errors.
-3. Cause C – DearFlip error: Check your Browser console (CTRL + SHIFT + I) and make sure there are no errors. If the error displayed is from dflip.min.js then report it using the contact lite support button below.
+3. Cause C – Dear Flipbook error: Check your Browser console (CTRL + SHIFT + I) and make sure there are no errors. If the error displayed is from dflip.min.js then report it using the contact lite support button below.
 
 
 
@@ -180,7 +190,7 @@ Make sure the file is accessible. Try opening the link in the browser, opening a
 == Frequently Asked Questions ==
 
 
-= How to install DearFlip 3D flipbook in my WordPress site? =
+= How to install Dear Flipbook in my WordPress site? =
 
 
 Please check the installation tab for details.
@@ -191,7 +201,7 @@ Please check the installation tab for details.
 = How many pages can 3D Flipbook support and how big can a PDF file be? =
 
 
-DearFlip 3D Flipbook uses PDF.js to render the PDF pages. At any given time it requires only 6 pages of data at max. So the amount of pages in a PDF file doesn't really affect the 3D Flipbook. Also, it only loads 6 Pages of data to start the flipbook and this makes it a resource friendly and traffic friendly 3D flipbook. Other 3D flipbooks might crash with huge files, DearFlip will last longer.
+Dear Flipbook - 3D Flipbook uses PDF.js to render the PDF pages. At any given time it requires only 6 pages of data at max. So the amount of pages in a PDF file doesn't really affect the 3D Flipbook. Also, it only loads 6 Pages of data to start the flipbook and this makes it a resource friendly and traffic friendly 3D flipbook. Other 3D flipbooks might crash with huge files, Dear Flipbook will last longer.
 > [Trom Site](https://www.tromsite.com/) is one of our premium client and one of their book has **1144 Pages and is 532MB** in size. It loads with only 4-5MB of PDF data.
 
 
@@ -252,7 +262,7 @@ You can create a flipbook with just the link and without creating the dFlip post
 = PDF links are not working! =
 
 
-1. PDF links are a premium feature in DearFlip, and won't be displayed in lite version of DearFlip 3D Flipbook WordPress Plugin. You can test your PDF links to check how they work in our online [PDF Flipbook Viewer](https://dearflip.com/go/wp-lite-pdf-viewer).
+1. PDF links are a premium feature in Dear Flipbook, and won't be displayed in lite version of Dear Flipbook - 3D Flipbook WordPress Plugin. You can test your PDF links to check how they work in our online [PDF Flipbook Viewer](https://dearflip.com/go/wp-lite-pdf-viewer).
 2. Also pay attention that some desktop readers' auto convert URL texts to links and give an assumption that those are links. Such links won't work in every reader and device. One of the popular cases is Adobe PDF Reader: it auto-converts the text URLs to links in desktop but not in mobile apps. So we suggest defining links explicitly and not rely on PDF reader's auto conversion capability.
 
 
@@ -274,7 +284,7 @@ If you want to contribute, go to our [DFlip Lite WordPress Repository](https://g
 
 == Screenshots ==
 
-1. 3D Flipbook animation of DearFlip. It's not a CGI it's real live screenshot.
+1. 3D Flipbook animation of Dear Flipbook. It's not a CGI it's real live screenshot.
 2. Photography Flipbook with custom image background. You can set custom background to flipbook post and the 3D flipbook will merge into the background.
 3. Realistic 3D Flipbook created with a PDF file. PDF files used is [MeatAtlas](https://www.boell.de/en/meat-atlas)
 4. 2D Flipbook as fallback; when the browser doesn't support 3D WebGL. As of 2020, 97% of the browsers support WebGL
@@ -284,6 +294,12 @@ If you want to contribute, go to our [DFlip Lite WordPress Repository](https://g
 == Changelog ==
 
 This lite version is available in WordPress plugin directory since version 1.2.8
+
+= 2.3.42: =
+* Add: Review notice
+* Fix: Vulnerability (CVE-2024-8717) fix
+* Fix: Keyboard conflicts in multiple embedded flipbooks. Works when there is one embedded flipbook
+* Improve: 3D Shadow improved for landscape sizes
 
 = 2.3.32: =
 * Add: Category filter added in posts page

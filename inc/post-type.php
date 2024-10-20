@@ -87,12 +87,14 @@ class DFlip_Post_Type {
 	    'rewrite'            => array( 'slug' => 'book-category' ),
     ) );
     
-    if ( is_admin() && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-      $this->init_admin();
+    if ( is_admin() ){
+      add_action( 'wp_ajax_hidedflipRating', array( $this, 'hidedflipRating' ));
+      if(!( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+        $this->init_admin();
+      }
     } else {// Load frontend only components.
       $this->init_front();
     }
-    
     
   }
   
@@ -112,8 +114,11 @@ class DFlip_Post_Type {
     
     add_filter( 'manage_edit-dflip_category_columns', array( $this, 'dflip_cat_columns' ) );
     add_filter( 'manage_dflip_category_custom_column', array( $this, 'dflip_cat_columns_content' ), 10, 3 );
-	  
-    add_action( 'restrict_manage_posts',array($this,'dflip_category_filter'), 10, 2 );
+    
+    add_action( 'restrict_manage_posts', array( $this, 'dflip_category_filter' ), 10, 2 );
+    
+    add_action( 'admin_notices', array( $this, 'display_review_help' ) );
+    
   }
   
   public function init_front() {
@@ -122,6 +127,64 @@ class DFlip_Post_Type {
     
   }
   
+  public function hidedflipRating() {
+    update_option( 'dflip_showratingdiv', 'no' );
+    echo wp_send_json_success();
+    exit;
+  }
+  
+  public function display_review_help() {
+    global $wp_query;
+    
+    if ( isset( get_current_screen()->id ) && 'edit-dflip' == get_current_screen()->id ) {
+      if ( $wp_query->post_count > 3 ) {
+        $post = $wp_query->posts[ $wp_query->post_count - 1 ];
+
+        $datetime1 = new DateTime( $post->post_date );
+        $datetime2 = new DateTime(); // current date
+        $interval = $datetime1->diff( $datetime2 );
+
+        if ( $interval->days > 7  && get_option( 'dflip_showratingdiv' ) != "no" ) {
+          echo '<div class="dflip_review_help notice is-dismissible notice-info">
+        <h2>Can you Help Us? - DearFlip</h2>
+        <button type="button" class="mashsbHideRating notice-dismiss" title="Close"></button>
+    	<p>Awesome, thank you for using <strong>DearFlip Plugin</strong> for more than 1 week. <br> May we ask you to give it a <strong>5-star rating</strong> on Wordpress? </br>
+        This will help to spread its popularity and to make this plugin a better one.
+        <br><br>Your help is much appreciated. Thank you very much,<br> ~DearHive Team
+        <ul>
+            <li class="float:left"><a href="https://wordpress.org/support/plugin/3d-flipbook-dflip-lite/reviews/?filter=5#new-post" class="thankyou button button-primary" target="_new" style="color: #ffffff;-webkit-box-shadow: 0 1px 0 #256e34;box-shadow: 0 1px 0 #256e34;font-weight: normal;float:left;margin-right:10px;">Yes, I Like DearFlip - I will Help with a review!</a></li>
+            <li><a href="javascript:void(0);" class="mashsbHideRating button" >I already rated it</a></li>
+            <li><a href="javascript:void(0);" class="mashsbHideRating">No, not good enough, I do not like to rate it!</a></li>
+        </ul>
+    </div>
+    <script>
+    jQuery( document ).ready(function( $ ) {
+
+    jQuery(\'.mashsbHideRating\').click(function(){
+        var data={\'action\':\'hidedflipRating\'}
+             jQuery.ajax({
+        
+        url: "' . admin_url( 'admin-ajax.php' ) . '",
+        type: "post",
+        data: data,
+        dataType: "json",
+        async: !0,
+        success: function(e) {
+            if (e.success) {
+               jQuery(\'.dflip_review_help\').slideUp(\'fast\');
+			   
+            }
+        }
+         });
+        })
+    
+    });
+    </script>
+    ';
+        }
+      }
+    }
+  }
   
   /**
    * Filter out unnecessary row actions dFlip post table.

@@ -437,7 +437,7 @@ function _instanceof(left, right) {
 ;// CONCATENATED MODULE: ./src/js/dearviewer/defaults.js
 /* globals jQuery */ var defaults_DEARVIEWER = {
     jQuery: jQuery,
-    version: '2.3.32',
+    version: '2.3.42',
     autoDetectLocation: true,
     slug: undefined,
     locationVar: "dearViewerLocation",
@@ -1666,6 +1666,7 @@ defaults_DEARVIEWER.parseThumbs = function(args) {
 };
 defaults_DEARVIEWER.initId = 10;
 defaults_DEARVIEWER.embeds = [];
+defaults_DEARVIEWER.activeEmbeds = [];
 defaults_DEARVIEWER.removeEmbeds = [];
 defaults_DEARVIEWER.removeEmbedsLimit = utils.isMobile ? 1 : 2;
 defaults_DEARVIEWER.parseNormalElements = function() {
@@ -1753,6 +1754,10 @@ defaults_DEARVIEWER.parseNormalElements = function() {
                         utils.log("Removed app id " + appId);
                         app.dispose();
                         app = null;
+                        var _ind = defaults_DEARVIEWER.activeEmbeds.indexOf(appId);
+                        if (_ind > -1) {
+                            defaults_DEARVIEWER.activeEmbeds.splice(_ind, 1);
+                        }
                     }
                 }
             }
@@ -1781,6 +1786,7 @@ defaults_DEARVIEWER.parseNormalElements = function() {
                         app1.softInit();
                     }
                     utils.log("Created app id " + appId);
+                    defaults_DEARVIEWER.activeEmbeds.push(appId);
                 }
             }
         }
@@ -7157,9 +7163,9 @@ var FlipBook3D = /*#__PURE__*/ function(BaseFlipBookViewer) {
                 var padding = dimensions.padding;
                 var cameraZ = 1 / (2 * Math.tan(Math.PI * stage.camera.fov * 0.5 / 180) / (dimensions.stage.height / app.zoomValue)) + 2.2;
                 this.updateShadowSize();
-                this.stage.spotLight.position.x = -this.pageScaleX * 440;
-                this.stage.spotLight.position.y = this.pageScaleX * 440;
-                this.stage.spotLight.position.z = this.pageScaleX * 660;
+                this.stage.spotLight.position.x = -this.pageScaleX * 330;
+                this.stage.spotLight.position.y = this.pageScaleX * 330;
+                this.stage.spotLight.position.z = this.pageScaleX * 550;
                 this.stage.spotLight.shadow.camera.far = this.pageScaleX * 1200;
                 this.stage.spotLight.shadow.camera.updateProjectionMatrix();
                 var shiftY = (padding.top - padding.bottom) / app.zoomValue / 2, shiftX = -(padding.left - padding.right) / app.zoomValue / 2;
@@ -8503,7 +8509,7 @@ var PDFDocumentProvider = /*#__PURE__*/ function(DocumentProvider) {
                         if (_a.hostname !== window.location.hostname && _a.href.indexOf("file://") === -1 && !provider_utils.isChromeExtension() && _a.href.indexOf("blob:") === -1) cors = "<strong>CROSS ORIGIN!! </strong>";
                         var fileName = ((_app_options = app.options) === null || _app_options === void 0 ? void 0 : _app_options.fileName) || _a.href;
                         //Display error reason
-                        app.updateInfo(cors + "<strong>Error: Cannot access file!  </strong>" + unescape(fileName) + "<br><br>" + error.message, "df-error");
+                        app.updateInfo(cors + "<strong>Error: Cannot access file!  </strong>" + fileName + "<br><br>" + error.message, "df-error");
                         console.log(error);
                         app.container.removeClass('df-loading').addClass("df-error");
                         provider.dispose();
@@ -9430,7 +9436,15 @@ var UI = /*#__PURE__*/ function() {
                 var ui = this, app = this.app;
                 //bail out if the keys are getting entered in some input box.
                 if (event.target.nodeName === "INPUT") return;
-                var navKeysValid = app.isFullscreen === true || app.options.isLightBox === true || app.options.arrowKeysAction === defaults_DEARVIEWER.ARROW_KEYS_ACTIONS.NAV;
+                var navKeysValid = false;
+                if (app.options.arrowKeysAction === defaults_DEARVIEWER.ARROW_KEYS_ACTIONS.NAV) {
+                    if (app.isFullscreen === true || app.options.isLightBox === true) {
+                        navKeysValid = true;
+                    }
+                    if (app.options.isLightBox != true && defaults_DEARVIEWER.activeEmbeds.length < 2 && controls_jQuery("body").hasClass("df-lightbox-open") === false) {
+                        navKeysValid = true;
+                    }
+                }
                 switch(event.keyCode){
                     case 27:
                         if (defaults_DEARVIEWER.activeLightBox && defaults_DEARVIEWER.activeLightBox.app && !controls_utils.isChromeExtension()) {
@@ -10079,7 +10093,7 @@ defaults_DEARVIEWER.checkBrowserURLforPDF = function() {
     if (controls_utils.isIEUnsupported) return;
     var pdf = new URL(location.href).searchParams.get('pdf-source');
     if (pdf) {
-        pdf = unescape(pdf);
+        pdf = decodeURI(pdf);
         if (openFlipbook) {
             defaults_DEARVIEWER.openURL(pdf);
         }
@@ -10402,6 +10416,9 @@ var App = /*#__PURE__*/ function() {
                         if (pdfDir !== "default" && pdfDir !== "") {
                             options.pdfjsSrc = window[defaults_DEARVIEWER.locationVar] + "js/libs/pdfjs/" + pdfDir + "/pdf.min.js";
                             options.pdfjsWorkerSrc = window[defaults_DEARVIEWER.locationVar] + "js/libs/pdfjs/" + pdfDir + "/pdf.worker.min.js";
+                        }
+                        if (pdfDir === "stable") {
+                            this.options.fakeZoom = 1;
                         }
                     }
                 } else {

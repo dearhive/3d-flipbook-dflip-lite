@@ -1039,6 +1039,7 @@ DEARVIEWER.parseThumbs = function (args) {
 
 DEARVIEWER.initId = 10;
 DEARVIEWER.embeds = [];
+DEARVIEWER.activeEmbeds = [];
 DEARVIEWER.removeEmbeds = [];
 DEARVIEWER.removeEmbedsLimit = (utils.isMobile ? 1 : 2);
 
@@ -1151,6 +1152,10 @@ DEARVIEWER.parseNormalElements = function () {
             utils.log("Removed app id " + appId);
             app.dispose();
             app = null;
+            var _ind = DEARVIEWER.activeEmbeds.indexOf(appId);
+            if( _ind> -1){
+              DEARVIEWER.activeEmbeds.splice(_ind,1);
+            }
           }
         }
       }
@@ -1182,6 +1187,7 @@ DEARVIEWER.parseNormalElements = function () {
             app.softInit();
           }
           utils.log("Created app id " + appId);
+          DEARVIEWER.activeEmbeds.push(appId);
         }
       }
     }
