@@ -487,6 +487,7 @@ class DocumentProvider {
     if (outline) {
       for (let count = 0; count < outline.length; count++) {
         outline[count].custom = true;
+        outline[count].dest = outline[count].dest.replace(/javascript:/g,'');
         provider.outline.push(outline[count]);
       }
     }

@@ -437,7 +437,7 @@ function _instanceof(left, right) {
 ;// CONCATENATED MODULE: ./src/js/dearviewer/defaults.js
 /* globals jQuery */ var defaults_DEARVIEWER = {
     jQuery: jQuery,
-    version: '2.3.50',
+    version: '2.3.52',
     autoDetectLocation: true,
     slug: undefined,
     locationVar: "dearViewerLocation",
@@ -8662,6 +8662,7 @@ var DocumentProvider = /*#__PURE__*/ function() {
                 if (outline) {
                     for(var count = 0; count < outline.length; count++){
                         outline[count].custom = true;
+                        outline[count].dest = outline[count].dest.replace(/javascript:/g, '');
                         provider.outline.push(outline[count]);
                     }
                 }

@@ -1566,6 +1566,9 @@ html.df-lightbox-open, body.df-lightbox-open {
       position: relative
     }
 
+  }
+  &.df-has-ridge{
+    .df-book-cover {
     &:after {
       display: block;
       content: " ";
@@ -1579,7 +1582,7 @@ html.df-lightbox-open, body.df-lightbox-open {
       left: 0;
     }
   }
-
+  }
   .df-book-title {
     bottom: -100%;
     position: absolute;

@@ -1648,7 +1648,7 @@ html.df-lightbox-open, body.df-lightbox-open {
   height: 200px;
   position: relative;
 }
-.df-popup-thumb .df-book-cover:after {
+.df-popup-thumb.df-has-ridge .df-book-cover:after {
   display: block;
   content: " ";
   height: 100%;
