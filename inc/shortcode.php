@@ -38,21 +38,9 @@ class DFlip_ShortCode {
 
     // Load shortcode hooks and filters.
     add_shortcode( 'dflip', array( $this, 'shortcode' ) );
-    //dearpdf shortcodes are loaded in init, so we need a later hook than init, widgets_init runs after init
-//    add_action( 'widgets_init', array( $this, 'dearpdf_override' ), 0 );
 
   }
 
-  public function dearpdf_override() {
-    remove_shortcode('dearpdf');
-    add_shortcode( 'dearpdf', array( $this, 'shortcode_dearpdf_wrapper' ) );
-    add_action('wp_enqueue_scripts', function () {
-      wp_dequeue_script("dearpdf-script");
-      wp_dequeue_style("dearpdf-style");
-      wp_deregister_script("dearpdf-script");
-      wp_deregister_style("dearpdf-style");
-    }, PHP_INT_MAX);
-  }
   /**
    * Builds the dFlip Shortcode for the plugin
    *
@@ -400,16 +388,6 @@ class DFlip_ShortCode {
     }
 
     return $html;
-  }
-
-
-  public function shortcode_dearpdf_wrapper( $attr, $content = '' ) {
-
-    if ( isset( $attr['posts'] ) && trim( $attr['posts'] ) !== '' ) {
-      $attr['books']=$attr['posts'];
-    }
-//    return $this->shortcode_dearpdf( $attr, $content );
-    return $this->shortcode( $attr, $content );
   }
 
 

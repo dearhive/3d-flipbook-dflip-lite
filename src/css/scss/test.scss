@@ -319,3 +319,39 @@ input.df-search-text {
   position: relative;
 }
 
+.rtl
+{
+  .df-popup-thumb {
+
+    .df-book-cover,
+    .df-book-page1,
+    .df-book-page2 {
+      transform-origin: right;
+    }
+
+    &:hover {
+      .df-book-cover {
+        transform: rotateY(18deg) rotateZ(0);
+      }
+
+      .df-book-page2 {
+        transform: rotateY(14deg) rotateZ(0);
+        box-shadow: -2px 0 4px rgba(0, 0, 0, .2);
+      }
+
+      .df-book-page1 {
+        transform: rotateY(8deg) rotateZ(0);
+        box-shadow: -2px 0 4px rgba(0, 0, 0, .2);
+      }
+
+      .df-book-wrapper {
+        transform: rotateY(15deg) rotateZ(0);
+        transform-origin: 70% !important;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, .2);
+      }
+    }
+    .df-book-cover:after {
+      transform: scaleX(-1);
+    }
+  }
+}

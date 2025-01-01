@@ -651,6 +651,9 @@
 
       dragEnable(outlineBox, ".outline-wrapper");
     }
+
+    jQuery('#menu-posts-dflip a[href="https://dearflip.com/go/wp-lite-upgrade-menu"]').addClass("df-upgrade-menu").attr("target","_blank");
+
   });
 
   function revalidateArray(array, scan) {

@@ -2359,6 +2359,31 @@ input.df-search-text:not(:placeholder-shown) ~ a.df-search-clear {
   position: relative;
 }
 
+.rtl .df-popup-thumb .df-book-cover,
+.rtl .df-popup-thumb .df-book-page1,
+.rtl .df-popup-thumb .df-book-page2 {
+  transform-origin: right;
+}
+.rtl .df-popup-thumb:hover .df-book-cover {
+  transform: rotateY(18deg) rotateZ(0);
+}
+.rtl .df-popup-thumb:hover .df-book-page2 {
+  transform: rotateY(14deg) rotateZ(0);
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+}
+.rtl .df-popup-thumb:hover .df-book-page1 {
+  transform: rotateY(8deg) rotateZ(0);
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+}
+.rtl .df-popup-thumb:hover .df-book-wrapper {
+  transform: rotateY(15deg) rotateZ(0);
+  transform-origin: 70% !important;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+}
+.rtl .df-popup-thumb .df-book-cover:after {
+  transform: scaleX(-1);
+}
+
 /*Test|Hot-Fixes Region End*/
 .df-posts [skip-parse] {
   display: none;

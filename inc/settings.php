@@ -75,6 +75,7 @@ class DFlip_Settings {
    * @since 1.2
    */
   public function settings_menu() {
+      global $submenu;
    
     $this->hook = add_submenu_page( 'edit.php?post_type=dflip', __( 'dFlip Global Settings', '3d-flipbook-dflip-lite' ), __( 'Global Settings', '3d-flipbook-dflip-lite' ), 'manage_options', $this->base->plugin_slug . '-settings',
         array( $this, 'settings_page' ) );
@@ -82,9 +83,10 @@ class DFlip_Settings {
     //The resulting page's hook_suffix, or false if the user does not have the capability required.
     if ( $this->hook ) {
       add_action( 'load-' . $this->hook, array( $this, 'update_settings' ) );
-      // Load metabox assets.
-      add_action( 'load-' . $this->hook, array( $this, 'hook_page_assets' ) );
     }
+    
+    $submenu['edit.php?post_type=dflip'][] = array('Upgrade DearFlip', 'manage_options', 'https://dearflip.com/go/wp-lite-upgrade-menu');
+    
   }
   
   /**
@@ -147,34 +149,6 @@ class DFlip_Settings {
           </div>
       </form>
     <?php
-    
-  }
-  
-  public function hook_page_assets() {
-    add_action( 'admin_enqueue_scripts', array( $this, 'meta_box_styles_scripts' ) );
-  }
-  
-  /**
-   * Loads styles and scripts for our metaboxes.
-   *
-   * @return null Bail out if not on the proper screen.
-   * @since 1.0.0
-   *
-   */
-  public function meta_box_styles_scripts() {
-    
-    
-    // Load necessary metabox styles.
-    wp_register_style( $this->base->plugin_slug . '-setting-metabox-style', plugins_url( '../assets/css/metaboxes.css', __FILE__ ), array(), $this->base->version );
-    wp_enqueue_style( $this->base->plugin_slug . '-setting-metabox-style' );
-    wp_enqueue_style( 'wp-color-picker' );
-    
-    // Load necessary metabox scripts.
-    wp_register_script( $this->base->plugin_slug . '-setting-metabox-script', plugins_url( '../assets/js/metaboxes.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs', 'wp-color-picker' ),
-        $this->base->version );
-    wp_enqueue_script( $this->base->plugin_slug . '-setting-metabox-script' );
-    
-    wp_enqueue_media();
     
   }
   

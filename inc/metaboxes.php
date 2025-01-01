@@ -72,16 +72,10 @@ class DFlip_Meta_boxes {
 
     global $id, $post;
 
-    if ( isset( get_current_screen()->base ) && 'post' !== get_current_screen()->base ) {
-      return;
-    }
     if ( isset( get_current_screen()->post_type )
          && $this->base->plugin_slug !== get_current_screen()->post_type ) {
       return;
     }
-
-    // Set the post_id for localization.
-    $post_id = isset( $post->ID ) ? $post->ID : (int) $id;
 
     // Load necessary metabox styles.
     wp_register_style( $this->base->plugin_slug . '-metabox-style', plugins_url( '../assets/css/metaboxes.css', __FILE__ ), array(), $this->base->version );
@@ -93,7 +87,11 @@ class DFlip_Meta_boxes {
       array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-resizable', 'wp-color-picker' ), $this->base->version );
     wp_enqueue_script( $this->base->plugin_slug . '-metabox-script' );
 
-    wp_enqueue_media( array( 'post' => $post_id ) );
+    if(isset( $post->ID ) || isset($id)){
+//       Set the post_id for localization.
+      $post_id = isset( $post->ID ) ? $post->ID : (int) $id;
+      wp_enqueue_media( array( 'post' => $post_id ) );
+    }
 
   }
 

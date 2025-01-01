@@ -437,7 +437,7 @@ function _instanceof(left, right) {
 ;// CONCATENATED MODULE: ./src/js/dearviewer/defaults.js
 /* globals jQuery */ var defaults_DEARVIEWER = {
     jQuery: jQuery,
-    version: '2.3.42',
+    version: '2.3.48',
     autoDetectLocation: true,
     slug: undefined,
     locationVar: "dearViewerLocation",
@@ -1389,12 +1389,12 @@ var getAttributes = function getAttributes(element) {
             var alias = aliases[i];
             if (alias !== '') {
                 var val = element.data(alias);
-                if (val !== null && val != "" && val != void 0) {
+                if (val !== null && val !== "" && val !== void 0) {
                     attrOptions[key] = val;
                     break;
                 }
                 val = element.attr(alias);
-                if (val !== null && val != "" && val != void 0) {
+                if (val !== null && val !== "" && val !== void 0) {
                     attrOptions[key] = val;
                     break;
                 }
@@ -1486,7 +1486,7 @@ utils.sanitizeOptions = function(options) {
     options.maxTextureSize = utils.parseIntIfExists(options.maxTextureSize);
     options.linkTarget = utils.parseIntIfExists(options.linkTarget);
     options.zoomRatio = utils.parseFloatIfExists(options.zoomRatio);
-    options.is3D = utils.parseBoolIfExists(options.is3D);
+    // options.is3D = utils.parseBoolIfExists(options.is3D); //is3D is not a boolean
     options.enableAnalytics = utils.parseBoolIfExists(options.enableAnalytics);
     options.autoPlay = utils.parseBoolIfExists(options.autoPlay);
     options.autoPlayStart = utils.parseBoolIfExists(options.autoPlayStart);
@@ -5467,6 +5467,322 @@ var FlipBook2D = /*#__PURE__*/ function(BaseFlipBookViewer) {
 }(BaseFlipBookViewer);
 
 
+;// CONCATENATED MODULE: ./src/js/dearviewer/viewers/slider.js
+function slider_assert_this_initialized(self) {
+    if (self === void 0) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self;
+}
+function slider_class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function slider_defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function slider_create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) slider_defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) slider_defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function slider_get(target, property, receiver) {
+    if (typeof Reflect !== "undefined" && Reflect.get) {
+        slider_get = Reflect.get;
+    } else {
+        slider_get = function get(target, property, receiver) {
+            var base = slider_super_prop_base(target, property);
+            if (!base) return;
+            var desc = Object.getOwnPropertyDescriptor(base, property);
+            if (desc.get) {
+                return desc.get.call(receiver || target);
+            }
+            return desc.value;
+        };
+    }
+    return slider_get(target, property, receiver || target);
+}
+function slider_get_prototype_of(o) {
+    slider_get_prototype_of = Object.setPrototypeOf ? Object.getPrototypeOf : function getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return slider_get_prototype_of(o);
+}
+function slider_inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) slider_set_prototype_of(subClass, superClass);
+}
+function slider_possible_constructor_return(self, call) {
+    if (call && (slider_type_of(call) === "object" || typeof call === "function")) {
+        return call;
+    }
+    return slider_assert_this_initialized(self);
+}
+function slider_set_prototype_of(o, p) {
+    slider_set_prototype_of = Object.setPrototypeOf || function setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+    };
+    return slider_set_prototype_of(o, p);
+}
+function slider_super_prop_base(object, property) {
+    while(!Object.prototype.hasOwnProperty.call(object, property)){
+        object = slider_get_prototype_of(object);
+        if (object === null) break;
+    }
+    return object;
+}
+function slider_type_of(obj) {
+    "@swc/helpers - typeof";
+    return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+}
+function slider_is_native_reflect_construct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {}));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+function slider_create_super(Derived) {
+    var hasNativeReflectConstruct = slider_is_native_reflect_construct();
+    return function _createSuperInternal() {
+        var Super = slider_get_prototype_of(Derived), result;
+        if (hasNativeReflectConstruct) {
+            var NewTarget = slider_get_prototype_of(this).constructor;
+            result = Reflect.construct(Super, arguments, NewTarget);
+        } else {
+            result = Super.apply(this, arguments);
+        }
+        return slider_possible_constructor_return(this, result);
+    };
+}
+
+
+
+var slider_utils = defaults_DEARVIEWER.utils;
+var SliderPage = /*#__PURE__*/ function(BookSheet2D) {
+    "use strict";
+    slider_inherits(SliderPage, BookSheet2D);
+    var _super = slider_create_super(SliderPage);
+    function SliderPage() {
+        slider_class_call_check(this, SliderPage);
+        return _super.apply(this, arguments);
+    }
+    slider_create_class(SliderPage, [
+        {
+            key: "init",
+            value: function init() {
+                var sheet = this, div = '<div>';
+                var element = sheet.element = jQuery(div, {
+                    class: 'df-sheet'
+                });
+                var frontPage = sheet.frontPage = new Page2D();
+                frontPage.element.addClass('df-page-front').appendTo(sheet.element);
+                var backPage = sheet.backPage = new Page2D();
+                backPage.element.addClass('df-page-back').appendTo(sheet.element);
+                this.parentElement.append(element);
+                this.frontPage.sheet = this.backPage.sheet = this;
+            }
+        },
+        {
+            key: "completeTween",
+            value: function completeTween() {
+                var sheet = this;
+                sheet.isFlipping = false;
+                sheet.viewer.onFlip();
+                sheet.viewer.afterFlip();
+                sheet.viewer.requestRefresh();
+                sheet.element[0].style.opacity = 1;
+            }
+        },
+        {
+            key: "flip",
+            value: function flip(point) {
+                var sheet = this;
+                sheet.side = sheet.targetSide;
+                this.completeTween();
+            }
+        },
+        {
+            key: "updateSize",
+            value: function updateSize(width, height, top) {
+                width = Math.floor(width);
+                height = Math.floor(height);
+                top = Math.floor(top);
+                this.element[0].style.height = this.frontPage.element[0].style.height = height + "px";
+                this.element[0].style.width = this.frontPage.element[0].style.width = width + "px";
+                this.element[0].style.transform = 'translateX(' + this.positionX + 'px) translateY(' + top + 'px)';
+            }
+        }
+    ]);
+    return SliderPage;
+}(BookSheet2D);
+var Slider = /*#__PURE__*/ function(FlipBook2D) {
+    "use strict";
+    slider_inherits(Slider, FlipBook2D);
+    var _super = slider_create_super(Slider);
+    function Slider(options, appContext) {
+        slider_class_call_check(this, Slider);
+        var _this;
+        options.viewerClass = "df-slider";
+        options.pageMode = defaults_DEARVIEWER.FLIPBOOK_PAGE_MODE.SINGLE;
+        options.singlePageMode = defaults_DEARVIEWER.FLIPBOOK_SINGLE_PAGE_MODE.BOOKLET;
+        options.pageSize = defaults_DEARVIEWER.FLIPBOOK_PAGE_SIZE.SINGLE;
+        _this = _super.call(this, options, appContext);
+        _this.stackCount = 10;
+        _this.soundOn = false;
+        _this.foldSense = 0;
+        appContext._viewerPrepared();
+        return _this;
+    }
+    slider_create_class(Slider, [
+        {
+            key: "initPages",
+            value: function initPages() {
+                for(var count = 0; count < this.stackCount; count++){
+                    var sheet = new SliderPage({
+                        parentElement: this.wrapper
+                    });
+                    sheet.index = count; //just reference for debugging
+                    sheet.viewer = this;
+                    this.sheets.push(sheet);
+                    this.pages.push(sheet.frontPage);
+                    this.pages.push(sheet.backPage);
+                }
+            }
+        },
+        {
+            key: "resize",
+            value: function resize() {
+                slider_get(slider_get_prototype_of(Slider.prototype), "resize", this).call(this);
+                this.skipTransition = true;
+            }
+        },
+        {
+            key: "refreshSheet",
+            value: function refreshSheet(options) {
+                var _sheet = options.sheet, sheetPageNumber = options.sheetNumber;
+                _sheet.element.toggleClass("df-no-transition", _sheet.skipFlip || this.skipTransition);
+                //Render Pages & flip
+                if (_sheet.isFlipping === false) {
+                    if (options.needsFlip) {
+                        _sheet.flip();
+                    } else {
+                        // page.depth = depth;
+                        _sheet.skipFlip = false;
+                        _sheet.element.removeClass("df-flipping df-quick-turn df-folding df-left-side df-right-side");
+                        _sheet.element.addClass(_sheet.targetSide === defaults_DEARVIEWER.TURN_DIRECTION.LEFT ? "df-left-side" : "df-right-side");
+                        _sheet.side = _sheet.targetSide;
+                    }
+                }
+                _sheet.visible = options.visible;
+                _sheet.updateCSS({
+                    display: options.sheetNumber > 0 && options.sheetNumber <= this.app.pageCount ? "block" : "none",
+                    zIndex: options.zIndex
+                });
+                if (sheetPageNumber !== _sheet.pageNumber) {
+                    _sheet.element.attr("number", sheetPageNumber);
+                    _sheet.backPage.element.attr("pagenumber", _sheet.backPage.pageNumber);
+                    _sheet.frontPage.element.attr("pagenumber", _sheet.frontPage.pageNumber);
+                }
+            }
+        },
+        {
+            key: "refresh",
+            value: function refresh() {
+                slider_get(slider_get_prototype_of(Slider.prototype), "refresh", this).call(this);
+                this.skipTransition = false;
+            }
+        },
+        {
+            key: "eventToPoint",
+            value: function eventToPoint(event) {
+                var point = slider_get(slider_get_prototype_of(Slider.prototype), "eventToPoint", this).call(this, event);
+                //setting isInsideSheet == true call every other match as right page slide
+                point.isInsideSheet = jQuery(event.srcElement).closest(".df-page").length > 0;
+                point.isInsideCorner = false;
+                return point;
+            }
+        },
+        {
+            key: "initCustomControls",
+            value: function initCustomControls() {
+                //added so that sound is removed
+                var ui = this.app.ui;
+                var controls = ui.controls;
+                if (controls.pageMode) controls.pageMode.hide();
+            }
+        },
+        {
+            key: "setPageMode",
+            value: function setPageMode(args) {
+                args.isSingle = true;
+                slider_get(slider_get_prototype_of(Slider.prototype), "setPageMode", this).call(this, args);
+            }
+        },
+        {
+            key: "pagesReady",
+            value: function pagesReady() {
+                if (this.isFlipping()) return;
+                var leftPos = 0, rightPos = 0;
+                var app = this.app;
+                var midpoint = Math.floor(this.stackCount / 2);
+                var pages = [];
+                var page = app.currentPageNumber;
+                for(var _count = 0; _count < this.stackCount / 2; _count++){
+                    pages.push(page + _count);
+                    pages.push(page - _count - 1);
+                }
+                for(var i = 0; i < this.stackCount; i++){
+                    var pageNumber = pages[i];
+                    var page1 = this.getPageByNumber(pageNumber);
+                    if (page1) {
+                        var sheet = this.getPageByNumber(pageNumber).sheet;
+                        var viewPort = this.getViewPort(sheet.pageNumber, true);
+                        var size = slider_utils.contain(viewPort.width, viewPort.height, this.availablePageWidth(), this.availablePageHeight());
+                        if (app.currentPageNumber === sheet.pageNumber) {
+                            this.leftSheetWidth = this.rightSheetWidth = Math.floor(size.width);
+                        }
+                        if (app.currentPageNumber > sheet.pageNumber) {
+                            leftPos -= Math.floor(size.width) + 10;
+                            sheet.positionX = leftPos;
+                        } else {
+                            sheet.positionX = rightPos;
+                            rightPos += Math.floor(size.width) + 10;
+                        }
+                        var top = (this.availablePageHeight() - size.height) / 2;
+                        sheet.updateSize(Math.floor(size.width * app.zoomValue), Math.floor(size.height * app.zoomValue), top);
+                    }
+                }
+                this.updateCenter();
+                this.updatePendingStatusClass();
+            }
+        }
+    ]);
+    return Slider;
+}(FlipBook2D);
+
+
 ;// CONCATENATED MODULE: ./src/js/dearviewer/viewers/mockup.js
 function mockup_assert_this_initialized(self) {
     if (self === void 0) {
@@ -7733,6 +8049,7 @@ function viewers_lite_class_call_check(instance, Constructor) {
 
 
 
+
 defaults_DEARVIEWER.defaults.maxTextureSize = 2048;
 var FlipBook = function FlipBook(options, appContext) {
     "use strict";
@@ -7740,14 +8057,15 @@ var FlipBook = function FlipBook(options, appContext) {
     if (defaults_DEARVIEWER.utils.canSupport3D() == false) {
         options.is3D = false; //IE 11
     }
-    if (options.is3D === true) {
+    if (defaults_DEARVIEWER.utils.isTrue(options.is3D)) {
         return new FlipBook3D(options, appContext);
     }
     return new FlipBook2D(options, appContext);
 };
 defaults_DEARVIEWER.viewers = {};
-defaults_DEARVIEWER.viewers['flipbook'] = FlipBook;
-defaults_DEARVIEWER.viewers['default'] = defaults_DEARVIEWER.viewers['reader'] = Reader;
+defaults_DEARVIEWER.viewers["flipbook"] = FlipBook;
+defaults_DEARVIEWER.viewers["default"] = defaults_DEARVIEWER.viewers["reader"] = Reader;
+defaults_DEARVIEWER.viewers["slider"] = Slider;
 
 ;// CONCATENATED MODULE: ./src/js/dearviewer/utils/provider.js
 /* globals requirejs, jQuery*/ function provider_assert_this_initialized(self) {

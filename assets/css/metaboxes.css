@@ -1093,3 +1093,12 @@ div#thumb_preview img {
   margin-bottom: -15px;
   box-sizing: border-box;
 }
+
+a.df-upgrade-menu {
+  color: white !important;
+  background-color: #009688 !important;
+}
+
+a.df-upgrade-menu:hover {
+  background-color: #4CAF50 !important;
+}

@@ -6,7 +6,7 @@ Contributors: deip, dearhive
 Tags: flipbook, flip book, 3d flipbook, pdf flipbook, pdf viewer
 Requires at least: 4.6
 Tested up to: 6.6
-Stable tag: 2.3.42
+Stable tag: 2.3.48
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

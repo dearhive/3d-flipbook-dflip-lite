@@ -704,12 +704,12 @@ let getAttributes = function (element) {
       let alias = aliases[i];
       if (alias !== '') {
         let val = element.data(alias);
-        if (val !== null && val != "" && val != void 0) {
+        if (val !== null && val !== "" && val !== void 0) {
           attrOptions[key] = val;
           break;
         }
         val = element.attr(alias);
-        if (val !== null && val != "" && val != void 0) {
+        if (val !== null && val !== "" && val !== void 0) {
           attrOptions[key] = val;
           break;
         }
@@ -823,7 +823,7 @@ utils.sanitizeOptions = function (options) {
   options.linkTarget = utils.parseIntIfExists(options.linkTarget);
   options.zoomRatio = utils.parseFloatIfExists(options.zoomRatio);
 
-  options.is3D = utils.parseBoolIfExists(options.is3D);
+  // options.is3D = utils.parseBoolIfExists(options.is3D); //is3D is not a boolean
   options.enableAnalytics = utils.parseBoolIfExists(options.enableAnalytics);
   options.autoPlay = utils.parseBoolIfExists(options.autoPlay);
   options.autoPlayStart = utils.parseBoolIfExists(options.autoPlayStart);

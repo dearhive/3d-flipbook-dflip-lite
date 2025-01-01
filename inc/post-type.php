@@ -137,7 +137,7 @@ class DFlip_Post_Type {
     global $wp_query;
     
     if ( isset( get_current_screen()->id ) && 'edit-dflip' == get_current_screen()->id ) {
-      if ( $wp_query->post_count > 3 ) {
+      if ( $wp_query->post_count > 2 ) {
         $post = $wp_query->posts[ $wp_query->post_count - 1 ];
 
         $datetime1 = new DateTime( $post->post_date );
