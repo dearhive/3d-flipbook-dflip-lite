@@ -3,6 +3,25 @@
 }
 .df-text-content, .df-auto-link-content {
   line-height: 1;
+  transform-origin: top left;
+}
+.df-auto-link-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+[data-main-rotation="90"]{
+  transform:rotate(90deg) translateY(-100%);
+}
+[data-main-rotation="180"]{
+  transform:rotate(180deg) translate(-100%, -100%);
+}
+[data-main-rotation="270"]{
+  transform:rotate(270deg) translateX(-100%);
 }
 
 .df-text-content span,

@@ -1,6 +1,6 @@
 {
   "name": "3d-flipbook-dflip-lite",
-  "version": "2.3.48",
+  "version": "2.3.50",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },

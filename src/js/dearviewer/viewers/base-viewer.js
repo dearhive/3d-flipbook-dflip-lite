@@ -300,15 +300,45 @@ class BaseViewer {
   }
 
   pinchDown(event) {
-    //extened in pro
+    if (event.touches != null && event.touches.length == 2 && this.startTouches == null) {
+      this.startTouches = utils.getTouches(event);
+      this.app.viewer.zoomCenter = utils.getVectorAvg(utils.getTouches(event, this.parentElement.offset()));
+      this.lastScale = 1;
+    }
   }
 
   pinchUp(event) {
-    //extened in pro
+    if (event.touches != null && event.touches.length < 2 && this.pinchZoomDirty == true) {
+
+      this.app.viewer.lastScale = this.lastScale;
+      this.app.container.removeClass("df-pinch-zoom");
+      this.updateTemporaryScale(true);
+      this.app.zoom();
+      this.lastScale = null;
+      this.app.viewer.canSwipe = false;
+      this.pinchZoomDirty = false;
+      this.app.viewer._pinchZoomLastScale = null;
+      this.startTouches = null;
+    }
   }
 
   pinchMove(event) {
-    //extened in pro
+    if (event.touches != null && event.touches.length == 2 && this.startTouches != null) {
+      this.pinchZoomDirty = true;
+      this.app.container.addClass("df-pinch-zoom");
+      var newScale = utils.calculateScale(this.startTouches, utils.getTouches(event)),
+        scale = newScale / this.lastScale;
+      this.lastScale = newScale;
+      this.app.viewer.pinchZoomUpdateScale = utils.limitAt(newScale, this.app.viewer.minZoom / this.app.zoomValue, this.app.viewer.maxZoom / this.app.zoomValue);
+
+      if (this.app.viewer._pinchZoomLastScale != this.app.viewer.pinchZoomUpdateScale) {
+        this.app.viewer.pinchZoomRequestStatus = DEARVIEWER.REQUEST_STATUS.ON;
+        this.app.viewer._pinchZoomLastScale = this.app.viewer.pinchZoomUpdateScale;
+      }
+
+      event.preventDefault();
+      return;
+    }
   }
 
   updateTemporaryScale(reset = false) {

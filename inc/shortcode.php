@@ -383,7 +383,7 @@ class DFlip_ShortCode {
 
       $code = 'window.option_' . $id . ' = ' . json_encode( $post_data ) . '; if(window.DFLIP && window.DFLIP.parseBooks){window.DFLIP.parseBooks();}';
 
-      $html .= '<script class="df-shortcode-script" type="application/javascript">' . $code . '</script>';
+      $html .= '<script class="df-shortcode-script" nowprocket type="application/javascript">' . $code . '</script>';
 
     }
 

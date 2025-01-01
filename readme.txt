@@ -5,8 +5,8 @@ Author URI: https://dearflip.com/go/wp-lite-author
 Contributors: deip, dearhive
 Tags: flipbook, flip book, 3d flipbook, pdf flipbook, pdf viewer
 Requires at least: 4.6
-Tested up to: 6.6
-Stable tag: 2.3.48
+Tested up to: 6.7
+Stable tag: 2.3.50
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -294,6 +294,15 @@ If you want to contribute, go to our [DFlip Lite WordPress Repository](https://g
 == Changelog ==
 
 This lite version is available in WordPress plugin directory since version 1.2.8
+
+= 2.3.50: =
+* Add: WP-rocket exclusion attribute for inline script
+* Add: Pinch to zoom for mobile phones
+
+= 2.3.48: =
+* Add: Compatiblity checked with WordPress 6.7
+* Fix: Slider mode not working
+* Improve: RTL thumbs when site is in RTL mode
 
 = 2.3.42: =
 * Add: Review notice
